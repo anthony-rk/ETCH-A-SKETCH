@@ -17,3 +17,26 @@
 	outline:1px solid #fff;
 	display:inline-block;
 }
+
+.block {
+	display: block;
+	width: 960px;
+	height: 50px;
+	border: dotted;
+	background-color: rgb(68, 146, 81);
+	color: black
+	padding: 14px 28px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+}
+
+#gitHubLink {
+	display: block;
+	font-size: 22px;
+	padding: 0px 10px 25px 20px;
+}
+
+button:hover {
+	opacity: 80%;
+}

@@ -7,6 +7,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     document.getElementById("newGrid").addEventListener("click", refreshGrid);
     document.getElementById("resetGrid").addEventListener("click", resetGrid);
+    
+    // // these 2 below need to be fleshed out
+    // document.getElementById("colorPickerButton").addEventListener("click", colorPickerButton);
+    // document.getElementById("randomColors").addEventListener("click", randomColors);
+    // // 2 above here are new
 
     let gridElements = document.getElementsByClassName("grid");
 
