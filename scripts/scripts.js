@@ -2,10 +2,11 @@
 let initialGridSize = 16;
 
 // Script runs once DOMContentLoaded
-document.addEventListener("DOMContentLoaded", function(event){
+document.addEventListener("DOMContentLoaded", function(event) {
     createDivGrid(initialGridSize);
 
     document.getElementById("newGrid").addEventListener("click", refreshGrid);
+    document.getElementById("resetGrid").addEventListener("click", resetGrid);
 
     let gridElements = document.getElementsByClassName("grid");
 
@@ -30,8 +31,9 @@ function createDivGrid(gridSize) {
 
 // function that prompts the user for new grid size
 // the function then creates that new grid
-function refreshGrid(){
+function refreshGrid() {
     let newGridSize = prompt("How many boxes per side?");
+    initialGridSize = newGridSize;
     clearGrid();
     createDivGrid(newGridSize);
 
@@ -42,7 +44,18 @@ function refreshGrid(){
     }
 };
 
-function clearGrid(){
+function resetGrid() { 
+    clearGrid();
+    createDivGrid(initialGridSize);
+
+    let gridElements = document.getElementsByClassName("grid");
+
+    for (let i = 0; i < gridElements.length; i++) {
+        gridElements[i].addEventListener("mouseover", updateBackground);
+    }
+};
+
+function clearGrid() {
     removeElementsByClass('grid');
 };  
 
