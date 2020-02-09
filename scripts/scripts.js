@@ -22,7 +22,8 @@ function createDivGrid(gridSize) {
             div.style.width = 960 / gridSize + "px";
             div.style.height = 960 / gridSize + "px";
             div.classList.add("grid");
-            div.style.background = "red";
+            initialBackgroundColor = "rgba(100, 100, 100, 0.1)";
+            div.style.background = initialBackgroundColor;
 
             document.getElementById("container").appendChild(div);
         }
@@ -67,7 +68,21 @@ function removeElementsByClass(className) {
 };
 
 function updateBackground(element) {
-    this.style.background = "black";
-}
+    if (this.style.background == initialBackgroundColor) {
+        var redAmt = Math.floor(Math.random() * 256);
+        var greenAmt = Math.floor(Math.random() * 256);
+        var blueAmt = Math.floor(Math.random() * 256);
+        var alphaAmt = 0.9;
+        var bgColor = "rgba(" + redAmt + "," + blueAmt + "," + greenAmt + "," + alphaAmt + ")";
+    
+        console.log(bgColor);
+        this.style.background = bgColor;
+   } else {
+        this.style.opacity = 0.9;
+        this.style.background = "black";
+        console.log("hello");
+   } 
+};
+
 
 
